@@ -35,7 +35,7 @@ module Spree
       private
 
       def find_resource
-        if parent.present?
+        if parent_data.present?
           parent.send(controller_name).find_by!(number: params[:id])
         else
           model_class.find_by!(number: params[:id])
